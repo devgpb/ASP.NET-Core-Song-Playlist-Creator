@@ -1,0 +1,107 @@
+@model IEnumerable<MusicPlaylist.Models.Musica>
+
+<div class="container">
+    <div class="w-100">
+        <div class="w-100">
+            
+            <h2 class="gray-var text-center">Sua Playlist
+                @if(ViewBag.filter != null){
+                    <span>em</span>
+                }  @ViewBag.filter  @ViewBag.ident</h2>
+            <form class="w-100 d-flex justify-content-between pb-2"       asp-controller="Musicas" asp-action="Index" method="Post">
+
+                <div class="l1 d-flex">
+
+                    <input type="text" name="identifier" id="identifier" class="" placeholder="Pesquisar...">
+
+                    <div class="d-flex align-items-center choices pl-2">
+
+                    <input type="radio" name="filter" value="nome">
+                    <label for="nome">Nome</label>
+
+                    <input type="radio" name="filter" value="autor">
+                     <label for="autor">Autor</label>
+
+                    <input type="radio" name="filter" value="genero">
+                     <label for="genero">Genero</label>
+
+                    <input type="radio" name="filter" value="mood">
+                    <label for="mood">Humor</label>
+
+                    <input type="radio" name="filter" value="aleatorio">
+                    <label for="mood">Aleatorio</label>
+                    </div>
+
+                </div>
+                <div class="l2 d-flex d-flex justify-content-end ">
+                    <a asp-controller="Musicas" asp-action="Index" class="btn btn-secondary reset-btn" > RESET </a>
+                    <input type="submit" value="UPDATE"  class="btn btn-outline-info">
+                    @* <button></button> *@
+                </div>
+                
+            </form>
+
+
+            <table class="table table-bordered table-striped w100">
+                
+                <thead class="table-dark">
+                    <tr class="text-center">
+                        <td>Id</td>
+                        <td>Nome</td>
+                        <td>Autor</td>
+                        <td>Genero</td>
+                        <td>Humor</td>
+                        <td>#</td>
+                    </tr>
+                </thead>
+
+                @if (Model.Count() > 0)
+                {   
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Nome</td>
+                            <td>@item.Autor</td>
+                            <Td>@item.Genero</Td>
+                            <td>@item.Mood</td>
+                            <td class="text-center">
+                                <div class="btn-group w-75" rol e="group">
+                                    Editar / Apagar
+                                </div>
+                            </td>
+                        </tr>
+                        }
+
+                    </tbody>
+                }else{
+                    <tfoot>
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            Sem Dados Na Tabela
+                        </td>
+                    </tr>
+                    </tfoot>  
+                }
+
+            </table>
+        </div>
+    </div>
+     
+</div>
+
+<style>
+.choices label{
+    margin-left: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+#identifier{
+    margin-right: 6px;
+}
+
+.reset-btn{
+    margin-right: 0.5rem;
+}
+</style>
