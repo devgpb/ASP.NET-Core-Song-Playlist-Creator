@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SVuNsc8dfq/gEf0Fn0L0nsmaSzp9w8vwtDZTpY/A9pI=",
+  "Hash": "K67QiuMz7svl5MAS7/WX1eetnEyGpexkTdF+N6dHr9c=",
   "Source": "MusicPlaylist",
   "BasePath": "_content/MusicPlaylist",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\wwwroot\\js\\musicas.js",
+      "SourceId": "MusicPlaylist",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\wwwroot\\",
+      "BasePath": "_content/MusicPlaylist",
+      "RelativePath": "js/musicas.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\musicas.js"
     },
     {
       "Identity": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\wwwroot\\js\\site.js",

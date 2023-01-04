@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj": {}
+    "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj": {}
   },
   "projects": {
-    "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj": {
+    "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj",
+        "projectUniqueName": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj",
         "projectName": "MusicPlaylist",
-        "projectPath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj",
+        "projectPath": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj",
         "packagesPath": "C:\\Users\\umpou\\.nuget\\packages\\",
-        "outputPath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\obj\\",
+        "outputPath": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\umpou\\AppData\\Roaming\\NuGet\\NuGet.Config"

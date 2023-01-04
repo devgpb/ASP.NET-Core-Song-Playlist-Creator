@@ -1,5 +1,6 @@
 @model IEnumerable<MusicPlaylist.Models.Musica>
 
+
 <div class="container">
     <div class="w-100">
         <div class="w-100">
@@ -16,20 +17,20 @@
 
                     <div class="d-flex align-items-center choices pl-2">
 
-                    <input type="radio" name="filter" value="nome">
-                    <label for="nome">Nome</label>
+                    <input type="radio" name="filter" value="Nome">
+                    <label for="Nome">Nome</label>
 
-                    <input type="radio" name="filter" value="autor">
-                     <label for="autor">Autor</label>
+                    <input type="radio" name="filter" value="Autor">
+                     <label for="Autor">Autor</label>
 
-                    <input type="radio" name="filter" value="genero">
-                     <label for="genero">Genero</label>
+                    <input type="radio" name="filter" value="Genero">
+                     <label for="Genero">Genero</label>
 
-                    <input type="radio" name="filter" value="mood">
-                    <label for="mood">Humor</label>
+                    <input type="radio" name="filter" value="Mood">
+                    <label for="Mood">Humor</label>
 
-                    <input type="radio" name="filter" value="aleatorio">
-                    <label for="mood">Aleatorio</label>
+                    <input type="radio" name="filter" value="Aleatorio">
+                    <label for="Aleatorio">Aleatorio</label>
                     </div>
 
                 </div>
@@ -68,7 +69,10 @@
                             <td>@item.Mood</td>
                             <td class="text-center">
                                 <div class="btn-group w-75" rol e="group">
-                                    Editar / Apagar
+                                    <a asp-controller="Musicas" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-info mx-3">Editar</a>
+
+                                    <a asp-controller="Musicas" asp-action="Delete"  asp-route-id="@item.Id" class="btn btn-outline-danger mx-3">Apagar</a>
+
                                 </div>
                             </td>
                         </tr>
@@ -105,3 +109,13 @@
     margin-right: 0.5rem;
 }
 </style>
+
+
+<script>
+    filter = '@ViewBag.filter';
+    var inputStringFilter = "input[value='"+filter+"']:radio";
+
+    ident = '@ViewBag.ident';
+    var inputStringIdent = "#identifier";
+
+</script>

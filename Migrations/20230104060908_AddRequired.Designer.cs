@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusicPlaylist.Data;
 
@@ -10,9 +11,10 @@ using MusicPlaylist.Data;
 namespace MusicPlaylist.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230104060908_AddRequired")]
+    partial class AddRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +34,7 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Generos", (string)null);
+                    b.ToTable("Generos");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Mood", b =>
@@ -50,7 +52,7 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Moods", (string)null);
+                    b.ToTable("Moods");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Musica", b =>
@@ -79,7 +81,7 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Musicas", (string)null);
+                    b.ToTable("Musicas");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.User", b =>
@@ -100,7 +102,7 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

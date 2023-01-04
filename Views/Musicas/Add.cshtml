@@ -1,0 +1,74 @@
+@model MusicPlaylist.Models.Musica
+
+<form method="post" asp-controller="Musicas" asp-action="Add">
+
+    
+
+    <div class="container border pt-3 pb-3 mb-3">
+        <div class="form-group row bg-secondary">
+            <h2 class="text-white pl-3 ">Adicionar Música</h2>
+        </div>
+ 
+        <div class=" bg-secondary p-3 mt-3 text-white d-flex justify-content-center align-items-center flex-wrap" width="80%" heigth="500px">
+
+            <div class="prop">
+                <label asp-for="Nome">Nome:</label>
+                <input type="text" name="Nome" id="nome" asp-for="Nome"> 
+            </div>
+
+            <div class="prop">
+                <label  asp-for="Autor">Autor:</label>
+                <input type="text" name="Autor" id="Autor" asp-for="Autor">
+            </div>
+
+            <div class="prop">
+                <label  asp-for="Genero">Genero:</label>
+                <input type="text" name="Genero" id="Genero" asp-for="Genero">
+            </div>
+
+            <div class="prop">
+                <label  asp-for="Mood">Humor:</label>
+                <input type="text" name="Mood" id="Mood" asp-for="Mood">
+            </div>
+
+            <div class="prop">
+                    <input type="submit" value="CADASTRAR"  class="btn  btn-success">
+            </div>
+        </div>
+        <div class="validation-div">
+            <span asp-validation-for="Nome" class="text-danger"></span>
+            <span asp-validation-for="Autor" class="text-danger"></span>
+            <span asp-validation-for="Genero" class="text-danger"></span>
+            <span asp-validation-for="Mood" class="text-danger"></span>
+        </div>
+        @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@
+    </div>
+
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+<style>
+    .prop{
+        margin-right: 1rem;
+    }
+
+    .validation-div ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+
+    .validation-div ul li{
+        margin: 0 1rem;
+    }
+
+
+</style>
+
+

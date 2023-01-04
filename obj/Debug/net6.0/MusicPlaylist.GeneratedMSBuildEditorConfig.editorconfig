@@ -8,41 +8,49 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MusicPlaylist
 build_property.RootNamespace = MusicPlaylist
-build_property.ProjectDir = g:\DotNet\Trabalho_Final\MusicPlaylist\
+build_property.ProjectDir = G:\DotNet\Trabalho_Final\MusicPlaylist\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = g:\DotNet\Trabalho_Final\MusicPlaylist
+build_property.MSBuildProjectDirectory = G:\DotNet\Trabalho_Final\MusicPlaylist
 build_property._RazorSourceGeneratorDebug = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/Home/Index.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/Home/Privacy.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/Musicas/Index.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Musicas/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Musicas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/Shared/Error.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Musicas/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/Shared/_ValidationScriptsPartial.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/_ViewImports.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/_ViewStart.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[g:/DotNet/Trabalho_Final/MusicPlaylist/Views/Shared/_Layout.cshtml]
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9q1dyfj21f

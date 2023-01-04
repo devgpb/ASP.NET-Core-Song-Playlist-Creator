@@ -17,6 +17,7 @@ namespace MusicPlaylist.Controllers
         [HttpGet]
         public IActionResult Index()
         {   
+            ViewBag.jsfile = "musicas.js";
             IEnumerable<Musica> listaMusicas = this._db.Musicas;
             return View(listaMusicas);
         }
@@ -28,6 +29,7 @@ namespace MusicPlaylist.Controllers
 
             ViewBag.filter = filter;
             ViewBag.ident = identifier;
+            ViewBag.jsfile = "musicas.js";
 
             string identString = $"%{identifier}%";
 
@@ -37,27 +39,27 @@ namespace MusicPlaylist.Controllers
             
             switch (filter)
             {
-                case "nome":
+                case "Nome":
                     listaMusicas = this._db.Musicas.Where( 
                         m =>  EF.Functions.Like(m.Nome,identString)
                     );
                     break;
-                case "autor":
+                case "Autor":
                     listaMusicas = this._db.Musicas.Where( 
                         m =>  EF.Functions.Like(m.Autor,identString)
                     );
                     break;
-                case "genero":
+                case "Genero":
                     listaMusicas = this._db.Musicas.Where( 
                         m =>  EF.Functions.Like(m.Genero,identString)
                     );
                     break;
-                case "humor":
+                case "Humor":
                     listaMusicas = this._db.Musicas.Where( 
                         m =>  EF.Functions.Like(m.Mood,identString)
                     );
                     break;
-                case "aleatorio":
+                case "Aleatorio":
                     Random rand = new Random();
                     
                     int skipper = rand.Next(0, _db.Musicas.Count());
@@ -72,10 +74,80 @@ namespace MusicPlaylist.Controllers
                     break;
             }
             
-
-
             return View(listaMusicas);
         }
 
+        [HttpGet]
+        public IActionResult Add()
+        {   
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Add(Musica musica)
+        {   
+            if (ModelState.IsValid)
+           {    
+                // Genero gender = new Genero();
+                // gender.Nome = musica.Genero;
+
+
+                this._db.Musicas.Add(musica);
+                // var obj = this._db.Generos.Find(gender.Nome);
+
+                // if(obj == null ){
+                //     this._db.Generos.Add(gender);
+                // }
+
+                
+                this._db.SaveChanges();
+                return RedirectToAction("Index");
+           }
+            return View(musica);
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int? id)
+        {   
+            if (id != null && id > 0)
+           {
+                var obj = this._db.Musicas.Find(id);
+                if(obj != null ){
+                    this._db.Musicas.Remove(obj);
+                    this._db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                
+           }
+            return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id = 0)
+        {   
+            if(id > 0){
+                var obj = this._db.Musicas.Find(id);
+                if(obj != null ){                                                       
+                    return View(obj);
+                }
+                return RedirectToAction("Index");
+            }
+
+            return View("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Update(Musica obj)
+        {   
+            if (ModelState.IsValid)
+           {
+                this._db.Musicas.Update(obj);
+                this._db.SaveChanges();
+                return RedirectToAction("Index");
+           }
+            return View("Index");
+        }
     }
 }

@@ -16308,6 +16308,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\Views\\Musicas\\add.cshtml",
+      "TargetPath": "Views\\Musicas\\add.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -16335,6 +16340,11 @@
     {
       "FilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\Views\\Musicas\\Update.cshtml",
+      "TargetPath": "Views\\Musicas\\Update.cshtml",
       "FileKind": "mvc"
     }
   ],

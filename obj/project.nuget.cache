@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OqFO4KDowLWQoMRM1rfVP6dvGOQ1ZpfBRDWrH4YN2CUy6IBaV9EEnfHxtAMSibMpawWRfrSiOfDfTlXSMS0ong==",
+  "dgSpecHash": "2CrGxKr6yGSceotS5KH/UFAmYvDu2XFCfgl9R4UjheBDNQa4hFADxgCg9NKeJ3LFETsPMHDABRz/SjhuvIOWbA==",
   "success": true,
-  "projectFilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj",
+  "projectFilePath": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\MusicPlaylist.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\umpou\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\umpou\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
