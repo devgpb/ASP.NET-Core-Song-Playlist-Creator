@@ -16343,6 +16343,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\Views\\Genero\\Index.cshtml",
+      "TargetPath": "Views\\Genero\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "g:\\DotNet\\Trabalho_Final\\MusicPlaylist\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

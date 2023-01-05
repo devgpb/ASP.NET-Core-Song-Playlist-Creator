@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using MusicPlaylist.Data;
 using MusicPlaylist.Models;
@@ -82,30 +83,41 @@ namespace MusicPlaylist.Controllers
         {   
             var gender = this._db.Generos;
             ViewBag.Generos = gender;
+            // ViewBag.Quant = gender.Count();
             return View();
         }
 
 
         [HttpPost]
         public IActionResult Add(Musica musica)
-        {   
+        {       
+                GetErrorListFromModelState(ModelState);
+                
+                if (ModelState.IsValid)
+                {
+                    Genero gender = new Genero();
+                    gender.Nome = musica.GeneroNome;
 
-                Genero gender = new Genero();
-                gender.Nome = musica.GeneroNome;
+                    this._db.Musicas.Add(musica);
+                    Console.WriteLine("\n\n\n BackBack");
+                    var obj = this._db.Generos.Find(musica.GeneroNome);
+                    // Console.WriteLine("\n\n\n"+obj);
 
-                this._db.Musicas.Add(musica);
-                Console.WriteLine("\n\n\n BackBack");
-                var obj = this._db.Generos.Find(musica.GeneroNome);
-                // Console.WriteLine("\n\n\n"+obj);
+                    if( obj == null ){
+                        this._db.Generos.Add(gender);
+                        
+                    }
 
-                if( obj == null ){
-                    this._db.Generos.Add(gender);
                     
+                    this._db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
 
-                
-                this._db.SaveChanges();
-                return RedirectToAction("Index");
+
+                var genderList = this._db.Generos;
+                ViewBag.Generos = genderList;
+                ViewBag.Quant = genderList.Count();
+                return View();
 
         }
 
@@ -150,6 +162,20 @@ namespace MusicPlaylist.Controllers
                 return RedirectToAction("Index");
            }
             return View("Index");
+        }
+
+        public static List<string> GetErrorListFromModelState(ModelStateDictionary modelState)
+        {
+                    var query = from state in modelState.Values
+                                from error in state.Errors
+                                select error.ErrorMessage;
+
+                    var errorList = query.ToList();
+
+                    foreach (var error in errorList){
+                        Console.WriteLine(error);
+                    } 
+                    return errorList;
         }
     }
 }

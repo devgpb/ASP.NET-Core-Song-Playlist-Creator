@@ -1,7 +1,7 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Authentication;
+
 
 namespace MusicPlaylist.Models
 {
@@ -21,7 +21,7 @@ namespace MusicPlaylist.Models
         
         [ForeignKey("Genero")]
         public string GeneroNome { get; set; }
-        public Genero Genero { get; set; }
+        public Genero? Genero { get; set; }
 
     }
 }

@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = G:\DotNet\Trabalho_Final\MusicPlaylist
 build_property._RazorSourceGeneratorDebug = 
 
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Generos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

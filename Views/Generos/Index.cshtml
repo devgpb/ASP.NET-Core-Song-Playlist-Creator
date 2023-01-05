@@ -1,40 +1,19 @@
-@model MusicPlaylist.Models.Musica
+@model MusicPlaylist.Models.Genero
 
-<form method="post" asp-controller="Musicas" asp-action="Add">
+<form method="post" asp-controller="Generos" asp-action="Index">
 
     
 
     <div class="container border pt-3 pb-3 mb-3">
         <div class="form-group row bg-secondary">
-            <h2 class="text-white pl-3 ">Adicionar Música</h2>
+            <h2 class="text-white pl-3 ">Adicionar Genero</h2>
         </div>
  
         <div class=" bg-secondary p-3 mt-3 text-white d-flex justify-content-center align-items-center flex-wrap" width="80%" heigth="500px">
 
             <div class="prop">
-                <label asp-for="Nome">Nome:</label>
+                <label asp-for="Nome">Genero:</label>
                 <input type="text" name="Nome" id="nome" asp-for="Nome" class="form-control"> 
-            </div>
-
-            <div class="prop">
-                <label  asp-for="Autor">Autor:</label>
-                <input type="text" name="Autor" id="Autor" asp-for="Autor" class="form-control">
-            </div>
-
-            <div class="prop">
-                <label  asp-for="GeneroNome">Genero:</label>
-                    <select asp-for="GeneroNome" name="GeneroNome" id="GeneroNome" class="form-select">
-                        @foreach ( var gender in ViewBag.Generos){
-                            <option value="@gender.Nome">@gender.Nome</option>
-                        }
-
-                    </select>
-                @* <input type="text" name="GeneroNome" id="Genero" asp-for="GeneroNome"> *@
-            </div>
-
-            <div class="prop">
-                <label  asp-for="Mood">Humor:</label>
-                <input type="text" name="Mood" id="Mood" asp-for="Mood" class="form-control">
             </div>
 
             <div class="prop">
@@ -43,10 +22,6 @@
         </div>
         <div class="validation-div">
             <span asp-validation-for="Nome" class="text-danger"></span>
-            <span asp-validation-for="Autor" class="text-danger"></span>
-            <span asp-validation-for="GeneroNome" class="text-danger"  ></span>
-            <span asp-validation-for="Mood" class="text-danger"></span>
-            
         </div>
         @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@
     </div>
