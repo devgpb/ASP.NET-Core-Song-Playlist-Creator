@@ -51,7 +51,7 @@ namespace MusicPlaylist.Controllers
                     break;
                 case "Genero":
                     listaMusicas = this._db.Musicas.Where( 
-                        m =>  EF.Functions.Like(m.Genero,identString)
+                        m =>  EF.Functions.Like(m.GeneroNome,identString)
                     );
                     break;
                 case "Humor":
@@ -80,6 +80,8 @@ namespace MusicPlaylist.Controllers
         [HttpGet]
         public IActionResult Add()
         {   
+            var gender = this._db.Generos;
+            ViewBag.Generos = gender;
             return View();
         }
 
@@ -87,24 +89,24 @@ namespace MusicPlaylist.Controllers
         [HttpPost]
         public IActionResult Add(Musica musica)
         {   
-            if (ModelState.IsValid)
-           {    
-                // Genero gender = new Genero();
-                // gender.Nome = musica.Genero;
 
+                Genero gender = new Genero();
+                gender.Nome = musica.GeneroNome;
 
                 this._db.Musicas.Add(musica);
-                // var obj = this._db.Generos.Find(gender.Nome);
+                Console.WriteLine("\n\n\n BackBack");
+                var obj = this._db.Generos.Find(musica.GeneroNome);
+                // Console.WriteLine("\n\n\n"+obj);
 
-                // if(obj == null ){
-                //     this._db.Generos.Add(gender);
-                // }
+                if( obj == null ){
+                    this._db.Generos.Add(gender);
+                    
+                }
 
                 
                 this._db.SaveChanges();
                 return RedirectToAction("Index");
-           }
-            return View(musica);
+
         }
 
 

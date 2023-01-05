@@ -13,22 +13,27 @@
 
             <div class="prop">
                 <label asp-for="Nome">Nome:</label>
-                <input type="text" name="Nome" id="nome" asp-for="Nome"> 
+                <input type="text" name="Nome" id="nome" asp-for="Nome" class="form-control"> 
             </div>
 
             <div class="prop">
                 <label  asp-for="Autor">Autor:</label>
-                <input type="text" name="Autor" id="Autor" asp-for="Autor">
+                <input type="text" name="Autor" id="Autor" asp-for="Autor" class="form-control">
             </div>
 
             <div class="prop">
-                <label  asp-for="Genero">Genero:</label>
-                <input type="text" name="Genero" id="Genero" asp-for="Genero">
+                <label  asp-for="GeneroNome">Genero:</label>
+                    <select asp-for="GeneroNome" name="GeneroNome" id="GeneroNome" class="form-select">
+                        @foreach ( var genero in ViewBag.Generos){
+                            <option value="@genero.Nome">@genero.Nome</option>
+                        }
+                    </select>
+                @* <input type="text" name="GeneroNome" id="Genero" asp-for="GeneroNome"> *@
             </div>
 
             <div class="prop">
                 <label  asp-for="Mood">Humor:</label>
-                <input type="text" name="Mood" id="Mood" asp-for="Mood">
+                <input type="text" name="Mood" id="Mood" asp-for="Mood" class="form-control">
             </div>
 
             <div class="prop">
@@ -38,8 +43,10 @@
         <div class="validation-div">
             <span asp-validation-for="Nome" class="text-danger"></span>
             <span asp-validation-for="Autor" class="text-danger"></span>
-            <span asp-validation-for="Genero" class="text-danger"></span>
+            <span asp-validation-for="GeneroNome" class="text-danger"></span>
             <span asp-validation-for="Mood" class="text-danger"></span>
+            
+
         </div>
         @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@
     </div>
@@ -53,7 +60,11 @@
 
 <style>
     .prop{
-        margin-right: 1rem;
+        margin: 1rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
     }
 
     .validation-div ul{
@@ -61,14 +72,21 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        
     }
 
     .validation-div ul li{
         margin: 0 1rem;
     }
 
+    form input{
+        margin-left:5px;
+        height:40px;
+    }
 
+    form select{
+        margin-left:5px;
+        min-width : 180px;
+    }
 </style>
 
 

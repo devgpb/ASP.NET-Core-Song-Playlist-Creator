@@ -11,8 +11,8 @@ using MusicPlaylist.Data;
 namespace MusicPlaylist.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230104060908_AddRequired")]
-    partial class AddRequired
+    [Migration("20230105061725_Verson_1.2")]
+    partial class Verson_12
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,22 +25,21 @@ namespace MusicPlaylist.Migrations
 
             modelBuilder.Entity("MusicPlaylist.Models.Genero", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
+                    b.HasKey("Nome");
 
                     b.ToTable("Generos");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Mood", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Desc")
                         .IsRequired()
@@ -67,9 +66,9 @@ namespace MusicPlaylist.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Genero")
+                    b.Property<string>("GeneroNome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Mood")
                         .IsRequired()
@@ -80,6 +79,8 @@ namespace MusicPlaylist.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GeneroNome");
 
                     b.ToTable("Musicas");
                 });
@@ -103,6 +104,22 @@ namespace MusicPlaylist.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("MusicPlaylist.Models.Musica", b =>
+                {
+                    b.HasOne("MusicPlaylist.Models.Genero", "Genero")
+                        .WithMany("Generos")
+                        .HasForeignKey("GeneroNome")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genero");
+                });
+
+            modelBuilder.Entity("MusicPlaylist.Models.Genero", b =>
+                {
+                    b.Navigation("Generos");
                 });
 #pragma warning restore 612, 618
         }

@@ -23,22 +23,21 @@ namespace MusicPlaylist.Migrations
 
             modelBuilder.Entity("MusicPlaylist.Models.Genero", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Nome")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("Nome");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Generos", (string)null);
+                    b.ToTable("Generos");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Mood", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Desc")
                         .IsRequired()
@@ -50,7 +49,7 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Moods", (string)null);
+                    b.ToTable("Moods");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Musica", b =>
@@ -65,9 +64,9 @@ namespace MusicPlaylist.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Genero")
+                    b.Property<string>("GeneroNome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Mood")
                         .IsRequired()
@@ -79,7 +78,9 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Musicas", (string)null);
+                    b.HasIndex("GeneroNome");
+
+                    b.ToTable("Musicas");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.User", b =>
@@ -100,7 +101,23 @@ namespace MusicPlaylist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("MusicPlaylist.Models.Musica", b =>
+                {
+                    b.HasOne("MusicPlaylist.Models.Genero", "Genero")
+                        .WithMany("Generos")
+                        .HasForeignKey("GeneroNome")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genero");
+                });
+
+            modelBuilder.Entity("MusicPlaylist.Models.Genero", b =>
+                {
+                    b.Navigation("Generos");
                 });
 #pragma warning restore 612, 618
         }

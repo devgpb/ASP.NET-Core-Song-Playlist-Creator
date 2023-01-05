@@ -4,11 +4,9 @@ namespace MusicPlaylist.Models
 {
     public class Genero
     {
-        [Key]
-        public string Id { get; set; }
-
-        [Required]
+        [Key][Required]
         public string Nome { get; set; }
-         
+        
+       public List<Musica> Generos { get; set; }
     }
 }

@@ -22,11 +22,11 @@
             </div>
 
             <div class="prop">
-                <label  asp-for="Genero">Genero:</label>
-                <input type="text" name="Genero" id="Genero" asp-for="Genero">
+                <label  asp-for="GeneroNome">Genero:</label>
+                <input type="text" name="GeneroNome" id="Genero" asp-for="GeneroNome">
             </div>
 
-            <div class="prop">
+            <div class="prop">  
                 <label  asp-for="Mood">Humor:</label>
                 <input type="text" name="Mood" id="Mood" asp-for="Mood">
             </div>
@@ -38,7 +38,7 @@
         <div class="validation-div">
             <span asp-validation-for="Nome" class="text-danger"></span>
             <span asp-validation-for="Autor" class="text-danger"></span>
-            <span asp-validation-for="Genero" class="text-danger"></span>
+            <span asp-validation-for="GeneroNome" class="text-danger"></span>
             <span asp-validation-for="Mood" class="text-danger"></span>
         </div>
         @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@

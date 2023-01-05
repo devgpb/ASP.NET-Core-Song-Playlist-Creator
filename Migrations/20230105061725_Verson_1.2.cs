@@ -4,7 +4,7 @@
 
 namespace MusicPlaylist.Migrations
 {
-    public partial class Version_10 : Migration
+    public partial class Verson_12 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,41 +12,25 @@ namespace MusicPlaylist.Migrations
                 name: "Generos",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nome = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Generos", x => x.Id);
+                    table.PrimaryKey("PK_Generos", x => x.Nome);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Moods",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Desc = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Moods", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Musicas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Autor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Mood = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Genero = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Musicas", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,13 +46,37 @@ namespace MusicPlaylist.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Musicas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Autor = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mood = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GeneroNome = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Musicas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Musicas_Generos_GeneroNome",
+                        column: x => x.GeneroNome,
+                        principalTable: "Generos",
+                        principalColumn: "Nome",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Musicas_GeneroNome",
+                table: "Musicas",
+                column: "GeneroNome");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Generos");
-
             migrationBuilder.DropTable(
                 name: "Moods");
 
@@ -77,6 +85,9 @@ namespace MusicPlaylist.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Generos");
         }
     }
 }
