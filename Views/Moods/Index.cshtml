@@ -1,0 +1,67 @@
+@model MusicPlaylist.Models.Mood
+
+<form method="post" asp-controller="Moods" asp-action="Index">
+
+    
+
+    <div class="container border pt-3 pb-3 mb-3">
+        <div class="form-group row bg-secondary">
+            <h2 class="text-white pl-3 ">Adicionar Humor</h2>
+        </div>
+ 
+        <div class=" bg-secondary p-3 mt-3 text-white d-flex justify-content-center align-items-center flex-wrap" width="80%" heigth="500px">
+
+            <div class="prop">
+                <label asp-for="Nome">Humor:</label>
+                <input type="text" name="Nome" id="nome" asp-for="Nome" class="form-control"> 
+            </div>
+
+            <div class="prop">
+                    <input type="submit" value="CADASTRAR"  class="btn  btn-success">
+            </div>
+        </div>
+        <div class="validation-div">
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@
+    </div>
+
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+<style>
+    .prop{
+        margin: 1rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .validation-div ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .validation-div ul li{
+        margin: 0 1rem;
+    }
+
+    form input{
+        margin-left:5px;
+        height:40px;
+    }
+
+    form select{
+        margin-left:5px;
+        min-width : 180px;
+    }
+</style>
+
+

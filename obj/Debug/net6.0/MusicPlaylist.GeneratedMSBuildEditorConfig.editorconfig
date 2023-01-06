@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Moods/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9vZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/DotNet/Trabalho_Final/MusicPlaylist/Views/Musicas/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzaWNhc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

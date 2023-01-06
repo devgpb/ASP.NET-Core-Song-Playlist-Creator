@@ -16,8 +16,11 @@ namespace MusicPlaylist.Models
         [Required]
         public string Autor { get; set; }
         
-        [Required]
-        public string Mood { get; set; }
+        [ForeignKey("Mood")]
+        public string MoodNome { get; set; }
+        public Mood? mood { get; set; }
+
+
         
         [ForeignKey("Genero")]
         public string GeneroNome { get; set; }

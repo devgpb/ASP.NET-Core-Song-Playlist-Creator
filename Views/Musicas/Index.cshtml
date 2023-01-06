@@ -26,8 +26,8 @@
                     <input type="radio" name="filter" value="Genero">
                      <label for="Genero">Genero</label>
 
-                    <input type="radio" name="filter" value="Mood">
-                    <label for="Mood">Humor</label>
+                    <input type="radio" name="filter" value="MoodNome">
+                    <label for="MoodNome">Humor</label>
 
                     <input type="radio" name="filter" value="Aleatorio">
                     <label for="Aleatorio">Aleatorio</label>
@@ -66,7 +66,7 @@
                             <td>@item.Nome</td>
                             <td>@item.Autor</td>
                             <Td>@item.GeneroNome</Td>
-                            <td>@item.Mood</td>
+                            <td>@item.MoodNome</td>
                             <td class="text-center">
                                 <div class="btn-group w-75" rol e="group">
                                     <a asp-controller="Musicas" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-info mx-3">Editar</a>

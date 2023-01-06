@@ -33,21 +33,10 @@ namespace MusicPlaylist.Migrations
 
             modelBuilder.Entity("MusicPlaylist.Models.Mood", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Desc")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Nome");
 
                     b.ToTable("Moods");
                 });
@@ -68,9 +57,9 @@ namespace MusicPlaylist.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Mood")
+                    b.Property<string>("MoodNome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -79,6 +68,8 @@ namespace MusicPlaylist.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("GeneroNome");
+
+                    b.HasIndex("MoodNome");
 
                     b.ToTable("Musicas");
                 });
@@ -112,10 +103,23 @@ namespace MusicPlaylist.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MusicPlaylist.Models.Mood", "mood")
+                        .WithMany("Generos")
+                        .HasForeignKey("MoodNome")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Genero");
+
+                    b.Navigation("mood");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Genero", b =>
+                {
+                    b.Navigation("Generos");
+                });
+
+            modelBuilder.Entity("MusicPlaylist.Models.Mood", b =>
                 {
                     b.Navigation("Generos");
                 });

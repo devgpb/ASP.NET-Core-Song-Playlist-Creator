@@ -4,13 +4,10 @@ namespace MusicPlaylist.Models
 {
     public class Mood
     {
-        [Key]
-        public int Id { get; set; }
         
-        [Required]
+        [Required][Key]
         public string Nome { get; set; }
         
-        public string Desc { get; set; }
-         
+        public List<Musica>? Generos { get; set; }
     }
 }

@@ -57,7 +57,7 @@ namespace MusicPlaylist.Controllers
                     break;
                 case "Humor":
                     listaMusicas = this._db.Musicas.Where( 
-                        m =>  EF.Functions.Like(m.Mood,identString)
+                        m =>  EF.Functions.Like(m.MoodNome,identString)
                     );
                     break;
                 case "Aleatorio":
@@ -82,7 +82,10 @@ namespace MusicPlaylist.Controllers
         public IActionResult Add()
         {   
             var gender = this._db.Generos;
+            var moods = this._db.Moods;
+
             ViewBag.Generos = gender;
+            ViewBag.Moods = moods;
             // ViewBag.Quant = gender.Count();
             return View();
         }
@@ -141,6 +144,12 @@ namespace MusicPlaylist.Controllers
         [HttpGet]
         public IActionResult Update(int id = 0)
         {   
+            var gender = this._db.Generos;
+            var moods = this._db.Moods;
+
+            ViewBag.Generos = gender;
+            ViewBag.Moods = moods;
+
             if(id > 0){
                 var obj = this._db.Musicas.Find(id);
                 if(obj != null ){                                                       

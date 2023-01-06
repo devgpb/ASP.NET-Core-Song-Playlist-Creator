@@ -33,8 +33,17 @@
             </div>
 
             <div class="prop">
-                <label  asp-for="Mood">Humor:</label>
-                <input type="text" name="Mood" id="Mood" asp-for="Mood" class="form-control">
+
+                <label  asp-for="MoodNome">Humor:</label>
+
+                <select asp-for="MoodNome" name="MoodNome" id="MoodNome" class="form-select">
+
+                    @foreach ( var mood in ViewBag.Moods){
+                        <option value="@mood.Nome">@mood.Nome</option>
+                    }
+
+                </select>
+                @* <input type="text" name="MoodNome" id="MoodNome" asp-for="MoodNome" class="form-control"> *@
             </div>
 
             <div class="prop">
@@ -45,7 +54,7 @@
             <span asp-validation-for="Nome" class="text-danger"></span>
             <span asp-validation-for="Autor" class="text-danger"></span>
             <span asp-validation-for="GeneroNome" class="text-danger"  ></span>
-            <span asp-validation-for="Mood" class="text-danger"></span>
+            <span asp-validation-for="MoodNome" class="text-danger"></span>
             
         </div>
         @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@

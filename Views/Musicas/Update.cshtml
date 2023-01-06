@@ -21,14 +21,29 @@
                 <input type="text" name="Autor" id="Autor" asp-for="Autor">
             </div>
 
-            <div class="prop">
+           <div class="prop">
                 <label  asp-for="GeneroNome">Genero:</label>
-                <input type="text" name="GeneroNome" id="Genero" asp-for="GeneroNome">
+                    <select asp-for="GeneroNome" name="GeneroNome" id="GeneroNome" class="form-select">
+                        @foreach ( var gender in ViewBag.Generos){
+                            <option value="@gender.Nome">@gender.Nome</option>
+                        }
+
+                    </select>
+                @* <input type="text" name="GeneroNome" id="Genero" asp-for="GeneroNome"> *@
             </div>
 
-            <div class="prop">  
-                <label  asp-for="Mood">Humor:</label>
-                <input type="text" name="Mood" id="Mood" asp-for="Mood">
+            <div class="prop">
+
+                <label  asp-for="MoodNome">Humor:</label>
+
+                <select asp-for="MoodNome" name="MoodNome" id="MoodNome" class="form-select">
+
+                    @foreach ( var mood in ViewBag.Moods){
+                        <option value="@mood.Nome">@mood.Nome</option>
+                    }
+
+                </select>
+                @* <input type="text" name="MoodNome" id="MoodNome" asp-for="MoodNome" class="form-control"> *@
             </div>
 
             <div class="prop">
@@ -39,7 +54,7 @@
             <span asp-validation-for="Nome" class="text-danger"></span>
             <span asp-validation-for="Autor" class="text-danger"></span>
             <span asp-validation-for="GeneroNome" class="text-danger"></span>
-            <span asp-validation-for="Mood" class="text-danger"></span>
+            <span asp-validation-for="MoodNome" class="text-danger"></span>
         </div>
         @* <div asp-validation-summary="All" class="text-danger validation-div" ></div> *@
     </div>
@@ -52,8 +67,12 @@
 }
 
 <style>
-    .prop{
-        margin-right: 1rem;
+   .prop{
+        margin: 1rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
     }
 
     .validation-div ul{
@@ -61,13 +80,21 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        
     }
 
     .validation-div ul li{
         margin: 0 1rem;
     }
 
+    form input{
+        margin-left:5px;
+        height:40px;
+    }
+
+    form select{
+        margin-left:5px;
+        min-width : 180px;
+    }
 
 </style>
 
