@@ -11,8 +11,8 @@ using MusicPlaylist.Data;
 namespace MusicPlaylist.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230106020719_Verson_1.2")]
-    partial class Verson_12
+    [Migration("20230107074725_Verson_1.0")]
+    partial class Verson_10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,27 +74,6 @@ namespace MusicPlaylist.Migrations
                     b.HasIndex("MoodNome");
 
                     b.ToTable("Musicas");
-                });
-
-            modelBuilder.Entity("MusicPlaylist.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("MusicPlaylist.Models.Musica", b =>

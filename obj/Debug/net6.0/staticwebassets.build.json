@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K67QiuMz7svl5MAS7/WX1eetnEyGpexkTdF+N6dHr9c=",
+  "Hash": "GqRmvcvNQyyvbEu6WHQ2OjSNNYmJwKH6bO/hyQe6B2I=",
   "Source": "MusicPlaylist",
   "BasePath": "_content/MusicPlaylist",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\musicas.js"
+    },
+    {
+      "Identity": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\wwwroot\\js\\nobank.js",
+      "SourceId": "MusicPlaylist",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\wwwroot\\",
+      "BasePath": "_content/MusicPlaylist",
+      "RelativePath": "js/nobank.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\nobank.js"
     },
     {
       "Identity": "G:\\DotNet\\Trabalho_Final\\MusicPlaylist\\wwwroot\\js\\site.js",

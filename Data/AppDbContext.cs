@@ -10,7 +10,6 @@ namespace MusicPlaylist.Data
             
         }
 
-        public DbSet<User> Users { get; set; }
         public DbSet<Musica> Musicas { get; set; }
         public DbSet<Mood> Moods { get; set; }
         public DbSet<Genero> Generos { get; set; }

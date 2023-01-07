@@ -1,0 +1,12 @@
+1;Wicked Game;Chris Isaak;Mellow Gold ;Reflexivo;https://www.youtube.com/watch?v=oadhHk2xs6c
+2;I Want to Know What Love Is (1999 Remaster);Foreigner;Rock Clássico;Romantico;https://www.youtube.com/watch?v=4jA-_g_iSY0
+3;Eu Não Sou Boa Influência pra Você;Seu Pereira e Coletivo 401;MPB;Animado;https://youtu.be/kxnge-9on4o
+4;Serenata Existencialista;O Grilo;MPB;Existencialista;https://youtu.be/pps8D3nV67A
+5;505;Arctic Monkeys;Rock;Relaxado;FFFFF
+6;I Was Made For Lovin' You;Kiss;Rock;Animado;https://youtu.be/12fJAnaif34
+7;Waiting for a Girl like You;Foreigner;Rock;Romantico;https://youtu.be/RIdfPBmUAXc
+8;Dommage;Bigflo & Oli;Francesa;Animado;https://youtu.be/8AF-Sm8d8yk
+9;Cover Girl;Nyxjvh;Dreamo;Saudoso;https://youtu.be/vU-KO1riSKs
+10;Baby Come Back;Player;Mellow Gold;Dançante;https://youtu.be/vLtmmFjxSoc
+11;Slippery feat. Gucci Mane;Migos;Trap;Trapper;https://youtu.be/Hm1YFszJWbQ
+12;リサフランク420;MACINTOSH PLUS;Vaporwave;Só Deus Sabe;https://youtu.be/aQkPcPqTq4M

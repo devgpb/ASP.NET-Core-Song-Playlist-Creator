@@ -4,7 +4,7 @@ namespace MusicPlaylist.Models
 {
     public class Genero
     {
-        [Key][Required(ErrorMessage="Informe um Genero")]
+        [Key][Required(ErrorMessage="Considere Criar um genero")]
         public string Nome { get; set; }
         
        public List<Musica>? Generos { get; set; }

@@ -74,27 +74,6 @@ namespace MusicPlaylist.Migrations
                     b.ToTable("Musicas");
                 });
 
-            modelBuilder.Entity("MusicPlaylist.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("MusicPlaylist.Models.Musica", b =>
                 {
                     b.HasOne("MusicPlaylist.Models.Genero", "Genero")

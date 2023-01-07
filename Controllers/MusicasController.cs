@@ -1,4 +1,5 @@
 
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,13 @@ namespace MusicPlaylist.Controllers
         {   
             ViewBag.jsfile = "musicas.js";
             IEnumerable<Musica> listaMusicas = this._db.Musicas;
+            
+
+            if(listaMusicas.Count() == 0){
+                Console.WriteLine("\n\n\n"+listaMusicas.Count());
+                return RedirectToAction("NoBank");
+            }
+
             return View(listaMusicas);
         }
 
@@ -38,6 +46,9 @@ namespace MusicPlaylist.Controllers
                     m =>  EF.Functions.Like(m.Nome,identString)
             );
             
+
+            Console.WriteLine("\n\n\n"+listaMusicas.Count());
+
             switch (filter)
             {
                 case "Nome":
@@ -171,6 +182,19 @@ namespace MusicPlaylist.Controllers
                 return RedirectToAction("Index");
            }
             return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult NoBank()
+        {   
+            ViewBag.jsfile = "nobank.js";
+            return View();
+        }
+
+        public IActionResult Download()
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(@"Views/Musicas/Musicas.xlsx");
+            return File(bytes, "text/plain", "Musicas.xlsx");
         }
 
         public static List<string> GetErrorListFromModelState(ModelStateDictionary modelState)

@@ -4,7 +4,7 @@
 
 namespace MusicPlaylist.Migrations
 {
-    public partial class Verson_12 : Migration
+    public partial class Verson_10 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,20 +28,6 @@ namespace MusicPlaylist.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Moods", x => x.Nome);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -87,9 +73,6 @@ namespace MusicPlaylist.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Musicas");
-
-            migrationBuilder.DropTable(
-                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Generos");
